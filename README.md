@@ -18,8 +18,10 @@ namespace SimpleCalculator
                 Console.WriteLine("4. 나누기");
                 Console.WriteLine("5. 종료");
 
+                // 사용자의 선택을 읽어온다.
                 int choice = Convert.ToInt32(Console.ReadLine());
 
+                // 종료를 선택하면 루프를 빠져나가고 프로그램을 종료한다.
                 if (choice == 5)
                 {
                     Console.WriteLine("계산기를 종료합니다.");
@@ -34,6 +36,7 @@ namespace SimpleCalculator
 
                 double result = 0;
 
+                // 사용자의 선택에 따라 연산을 수행합니다.
                 switch (choice)
                 {
                     case 1:
@@ -48,14 +51,17 @@ namespace SimpleCalculator
                     case 4:
                         if (num2 != 0)
                             result = num1 / num2;
+                        // 만약 0으로 나눌 수 없다면
                         else
                             Console.WriteLine("0으로 나눌 수 없습니다.");
                         break;
+                    // 처음으로 돌아간다.
                     default:
                         Console.WriteLine("잘못된 선택입니다.");
                         continue;
                 }
 
+                // 연산 결과를 출력한다.
                 Console.WriteLine("결과: " + result);
             }
         }
